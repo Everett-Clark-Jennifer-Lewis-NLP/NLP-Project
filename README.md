@@ -41,8 +41,6 @@ ___
 ### Need to haves (Deliverables):
 
 
-### Nice to haves (With more time):
-
 ***
 ## <a name="findings"></a>Key Findings:
 
@@ -123,4 +121,8 @@ ___
 ***
 
 ## <a name="conclusion"></a>Conclusion:
+
+## Additional Improvements:
+### 1.
+### 2.
 [[Back to top](#top)]
