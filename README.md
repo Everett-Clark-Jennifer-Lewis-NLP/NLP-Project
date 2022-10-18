@@ -92,7 +92,7 @@ ___
 - Other indicators of model performance with brief definition and why it's important:
 
     
-#### Model 1: ---
+### Model 1: ---
 - Model 1 results:
 
 
@@ -104,18 +104,11 @@ ___
 - Model 3 results:
 
 
-### Model 4: ---
-- Model 4 results:
-
-
 ## Selecting the Best Model:
-
-### Use Table below as a template for all Modeling results for easy comparison:
 
 | Model | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
 | ---- | ----| ---- |
 | Baseline | 0.27 | 0 |
-| aaa | 0.0 | 0 |  
 | aaa | 0.0 | 0 |  
 | aaa | 0.0 | 0 |  
 | aaa | 0.0 | 0 |  
