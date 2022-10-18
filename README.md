@@ -6,8 +6,6 @@ by: Jennifer Lewis and Everett Clark
   <a href="https://github.com/JenniferMLewis" target="_blank">
     <img alt="Jennifer" src="https://img.shields.io/github/followers/JenniferMLewis?label=Follow_Jennifer&style=social" />
   </a>
-</p>
-<p>
   <a href="https://github.com/etclark3" target="_blank">
     <img alt="Everett" src="https://img.shields.io/github/followers/etclark3?label=Follow_Everett&style=social" />
   </a>
