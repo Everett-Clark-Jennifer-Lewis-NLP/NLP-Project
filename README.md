@@ -85,8 +85,8 @@ Using a variety of functions from functions.py, we created four additional colum
 | Model | Description| Train |
 | ---- | ----| ----|
 | Baseline | JS as the most common prediction| 25% |
-| Decision Tree** | using only single words| 46% |
-| Decision Tree | using single words, bi- and tri- grams| 62% |
+| Decision Tree | using only single words| 46% |
+| Decision Tree** | using single words, bi- and tri- grams| 62% |
 | Random Forest | using bi- and tri- grams| 53% |  
 
 ### Testing the Model
