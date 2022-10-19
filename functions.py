@@ -2,6 +2,9 @@
 import pandas as pd
 import numpy as np
 
+# regular expressions import
+import re
+
 # visualization imports
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
@@ -21,6 +24,7 @@ from sklearn.metrics import classification_report
 import warnings
 warnings.filterwarnings("ignore")
 
+
 def clean(text: str) -> list:
     'A simple function to cleanup text data'
     wnl = nltk.stem.WordNetLemmatizer()
@@ -32,17 +36,6 @@ def clean(text: str) -> list:
     words = re.sub(r'\w{15,}','',words).split()
     return [wnl.lemmatize(word) for word in words if word not in stopwords]
 
-def count(df):
-    '''Plots a barplot of the distributions of character lengths and word counts within the repository readmes'''
-    plt.figure(figsize=(16,9))
-    plt.bar(range(len(df.word_count)), sorted(df.word_count), color='black')
-    plt.bar(range(len(df.length)), sorted(df.length), color='lightsteelblue', alpha=0.5)
-    plt.ylabel('Count')
-    plt.xlim(0,100)
-    plt.grid()
-    plt.title('Distribution of Character Length and word Count per Repository')
-    plt.legend(['Word Count', 'Length'])
-    plt.show()
 
 def readme_length(df):
     '''Creates a column with the length (by # of characters) of the readme_contents column'''
@@ -63,6 +56,20 @@ def clean_readme(df):
     df['clean'] = df.readme_contents.apply(clean)
     return df
 
+
+def count(df):
+    '''Plots a barplot of the distributions of character lengths and word counts within the repository readmes'''
+    plt.figure(figsize=(16,9))
+    plt.bar(range(len(df.word_count)), sorted(df.word_count), color='black')
+    plt.bar(range(len(df.length)), sorted(df.length), color='lightsteelblue', alpha=0.5)
+    plt.ylabel('Count')
+    plt.xlim(0,100)
+    plt.grid()
+    plt.title('Distribution of Character Length and word Count per Repository')
+    plt.legend(['Word Count', 'Length'])
+    plt.show()
+
+
 def word_count(df):
     '''Creates a column with number of words in the clean column'''
     w = []
@@ -76,11 +83,26 @@ def word_count(df):
     df = df.join(w, how='right')
     return df
 
+
 def combined_words(df):
     '''Joins the list of words in the clean column to one string'''
     df['words'] = df.clean.apply(' '.join)
     return df
 
+
+def train_count(df, X_train):
+    '''
+    Plots a barplot of the distributions of character lengths and word counts for the Train repository readmes
+    '''
+    plt.figure(figsize=(16,9))
+    plt.bar(range(len(df.word_count.iloc[X_train.index.values])), sorted(df.word_count.iloc[X_train.index.values]), color='black')
+    plt.bar(range(len(df.length.iloc[X_train.index.values])), sorted(df.length.iloc[X_train.index.values]), color='lightsteelblue', alpha=0.5)
+    plt.ylabel('Count')
+    plt.xlim(0,80)
+    plt.grid()
+    plt.title('Distribution of Character Length and word Count per Repository')
+    plt.legend(['Word Count', 'Length'])
+    plt.show()
 
 
 def word_split(df):
