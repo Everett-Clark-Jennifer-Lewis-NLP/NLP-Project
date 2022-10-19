@@ -54,8 +54,8 @@ def word_split(df):
             cplus2_words = df[df.language == lang].words
         elif lang == "Shell":
             shell_words = df[df.language == lang].words
-        elif lang == "Dart":
-            dart_words = df[df.language == lang].words
+        # elif lang == "Dart":
+            # dart_words = df[df.language == lang].words
         elif lang == "C":
             c_words = df[df.language == lang].words
         elif lang == "Java":
@@ -76,15 +76,15 @@ def word_split(df):
             php_words = df[df.language == lang].words
         elif lang == "Clojure":
             clojure_words = df[df.language == lang].words
-        elif lang == "HTML":
-            html_words = df[df.language == lang].words
+        # elif lang == "HTML":
+        #     html_words = df[df.language == lang].words
     ts_words = ' '.join(ts_words)
     resource_words = ' '.join(resource_words)
     py_words = ' '.join(py_words)
     js_words = ' '.join(js_words)
     cplus2_words = ' '.join(cplus2_words)
     shell_words = ' '.join(shell_words)
-    dart_words = ' '.join(dart_words)
+    # dart_words = ' '.join(dart_words)
     c_words = ' '.join(c_words)
     java_words = ' '.join(java_words)
     md_words = ' '.join(md_words)
@@ -95,9 +95,10 @@ def word_split(df):
     vim_words = ' '.join(vim_words)
     php_words = ' '.join(php_words)
     clojure_words = ' '.join(clojure_words)
-    html_words = ' '.join(html_words)
+    # html_words = ' '.join(html_words)
+    all_words = df.words
     all_words = ' '.join(all_words)
-    return ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, dart_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, html_words, all_words
+    return ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, all_words
 
 def word_freqs(df):
     '''
@@ -107,7 +108,7 @@ def word_freqs(df):
     Prints the Language, Word Count for that Language, and Percentage of Total words of all Documents.
     Returns the Word Count DataFrame.
     '''
-    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, dart_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, html_words, all_words = word_split(df)
+    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, all_words = word_split(df)
     
     all_words_freq = pd.Series(all_words.split()).value_counts()
     ts_freq = pd.Series(ts_words.split()).value_counts()
@@ -116,7 +117,7 @@ def word_freqs(df):
     js_freq = pd.Series(js_words.split()).value_counts()
     cplus2_freq = pd.Series(cplus2_words.split()).value_counts()
     shell_freq = pd.Series(shell_words.split()).value_counts()
-    dart_freq = pd.Series(dart_words.split()).value_counts()
+    # dart_freq = pd.Series(dart_words.split()).value_counts()
     c_freq = pd.Series(c_words.split()).value_counts()
     java_freq = pd.Series(java_words.split()).value_counts()
     md_freq = pd.Series(md_words.split()).value_counts()
@@ -127,9 +128,9 @@ def word_freqs(df):
     vim_freq = pd.Series(vim_words.split()).value_counts()
     php_freq = pd.Series(php_words.split()).value_counts()
     clojure_freq = pd.Series(clojure_words.split()).value_counts()
-    html_freq = pd.Series(html_words.split()).value_counts()
-    word_counts = pd.concat([ts_freq, resource_freq, py_freq, js_freq, cplus2_freq, shell_freq, dart_freq, c_freq, java_freq, md_freq, go_freq, rust_freq, csharp_freq, vue_freq, vim_freq, php_freq, clojure_freq, html_freq, all_words_freq],axis=1).fillna(0).astype(int)
-    word_counts.columns = "typescript", "resource", "python", "javascript", "c++", "shell", "dart", "c", "java", "markdown", "go", "rust", "c#", "vue", "vim", "php", "clojure", "html", "all"  
+    # html_freq = pd.Series(html_words.split()).value_counts()
+    word_counts = pd.concat([ts_freq, resource_freq, py_freq, js_freq, cplus2_freq, shell_freq, c_freq, java_freq, md_freq, go_freq, rust_freq, csharp_freq, vue_freq, vim_freq, php_freq, clojure_freq, all_words_freq],axis=1).fillna(0).astype(int)
+    word_counts.columns = "typescript", "resource", "python", "javascript", "c++", "shell", "c", "java", "markdown", "go", "rust", "c#", "vue", "vim", "php", "clojure", "all"  
     word_counts.to_csv("word_counts.csv")
     for col in word_counts.columns:
         print(f'''{col} : 
@@ -143,7 +144,7 @@ def bigram_charts(df):
     Runs through scripting languages, sorts into words, then turns those words in bigrams
     Creates a Plot of Each Language's Most used Words and Bigrams.
     '''
-    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, dart_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, html_words, all_words = word_split(df)
+    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, all_words = word_split(df)
     print("Normal Word Use by Language:")
     pd.Series(ts_words.split()).value_counts().head(20).plot.barh()
     plt.title("TypeScript Word Use")
@@ -163,9 +164,9 @@ def bigram_charts(df):
     pd.Series(shell_words.split()).value_counts().head(20).plot.barh()
     plt.title("Shell Word Use")
     plt.show()
-    pd.Series(dart_words.split()).value_counts().head(20).plot.barh()
-    plt.title("Dart Word Use")
-    plt.show()
+    # pd.Series(dart_words.split()).value_counts().head(20).plot.barh()
+    # plt.title("Dart Word Use")
+    # plt.show()
     pd.Series(c_words.split()).value_counts().head(20).plot.barh()
     plt.title("C Word Use")
     plt.show()
@@ -196,9 +197,9 @@ def bigram_charts(df):
     pd.Series(clojure_words.split()).value_counts().head(20).plot.barh()
     plt.title("Clojure Word Use")
     plt.show()
-    pd.Series(html_words.split()).value_counts().head(20).plot.barh()
-    plt.title("HTML Word Use")
-    plt.show()
+    # pd.Series(html_words.split()).value_counts().head(20).plot.barh()
+    # plt.title("HTML Word Use")
+    # plt.show()
     pd.Series(all_words.split()).value_counts().head(20).plot.barh()
     plt.title("All Word Use")
     plt.show()
@@ -222,9 +223,9 @@ def bigram_charts(df):
     pd.Series(nltk.bigrams(shell_words.split())).value_counts().head(20).plot.barh()
     plt.title("Shell Bigram Word Use")
     plt.show()
-    pd.Series(nltk.bigrams(dart_words.split())).value_counts().head(20).plot.barh()
-    plt.title("Dart Bigram Word Use")
-    plt.show()
+    # pd.Series(nltk.bigrams(dart_words.split())).value_counts().head(20).plot.barh()
+    # plt.title("Dart Bigram Word Use")
+    # plt.show()
     pd.Series(nltk.bigrams(c_words.split())).value_counts().head(20).plot.barh()
     plt.title("C Bigram Word Use")
     plt.show()
@@ -255,9 +256,9 @@ def bigram_charts(df):
     pd.Series(nltk.bigrams(clojure_words.split())).value_counts().head(20).plot.barh()
     plt.title("Clojure Bigram Word Use")
     plt.show()
-    pd.Series(nltk.bigrams(html_words.split())).value_counts().head(20).plot.barh()
-    plt.title("HTML Bigram Word Use")
-    plt.show()
+    # pd.Series(nltk.bigrams(html_words.split())).value_counts().head(20).plot.barh()
+    # plt.title("HTML Bigram Word Use")
+    # plt.show()
     pd.Series(nltk.bigrams(all_words.split())).value_counts().head(20).plot.barh()
     plt.title("All Bigram Word Use")
     plt.show()
@@ -269,7 +270,7 @@ def wordcloud_img(df):
     Runs through scripting languages, sorts into words, then turns those words in bigrams
     Creates a Word Cloud Image of Each Language's Most used Bigrams as well as the Most Used words and bigrams among all languages.
     '''
-    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, dart_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, html_words, all_words = word_split(df)
+    ts_words, resource_words, py_words, js_words, cplus2_words, shell_words, c_words, java_words, md_words, go_words, rust_words, csharp_words, vue_words, vim_words, php_words, clojure_words, all_words = word_split(df)
 
     print("Word Clouds of Most Used Word by Language")
     plt.figure(figsize=(14, 7))
@@ -308,14 +309,15 @@ def wordcloud_img(df):
     plt.axis('off')
     plt.title("Shell Word Use")
     plt.show()
-    plt.figure(figsize=(14, 7))
-    img = WordCloud(background_color='white').generate(' '.join(pd.Series(dart_words.split())))
-    plt.imshow(img)
-    plt.axis('off')
-    plt.title("Dart Word Use")
-    plt.show()
+    # plt.figure(figsize=(14, 7))
+    # img = WordCloud(background_color='white').generate(' '.join(pd.Series(dart_words.split())))
+    # plt.imshow(img)
+    # plt.axis('off')
+    # plt.title("Dart Word Use")
+    # plt.show()
     plt.figure(figsize=(14, 7))
     img = WordCloud(background_color='white').generate(' '.join(pd.Series(c_words.split())))
+    plt.imshow(img)
     plt.axis('off')
     plt.title("C Word Use")
     plt.show()
@@ -338,7 +340,7 @@ def wordcloud_img(df):
     plt.title("Go Word Use")
     plt.show()
     plt.figure(figsize=(14, 7))
-    img = WordCloud(background_color='white').generate(' '.join(pd.Seriess(rust_words.split())))
+    img = WordCloud(background_color='white').generate(' '.join(pd.Series(rust_words.split())))
     plt.imshow(img)
     plt.axis('off')
     plt.title("Rust Word Use")
@@ -373,12 +375,12 @@ def wordcloud_img(df):
     plt.axis('off')
     plt.title("Clojure Word Use")
     plt.show()
-    plt.figure(figsize=(14, 7))
-    img = WordCloud(background_color='white').generate(' '.join(pd.Series(html_words.split())))
-    plt.imshow(img)
-    plt.axis('off')
-    plt.title("HTML Word Use")
-    plt.show()
+    # plt.figure(figsize=(14, 7))
+    # img = WordCloud(background_color='white').generate(' '.join(pd.Series(html_words.split())))
+    # plt.imshow(img)
+    # plt.axis('off')
+    # plt.title("HTML Word Use")
+    # plt.show()
     plt.figure(figsize=(14, 7))
     img = WordCloud(background_color='white').generate(' '.join(pd.Series(all_words.split())))
     plt.imshow(img)
@@ -424,12 +426,12 @@ def wordcloud_img(df):
     plt.axis('off')
     plt.title("Shell Word Use (Bigrams)")
     plt.show()
-    plt.figure(figsize=(14, 7))
-    img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(dart_words.split())).apply('_'.join)))
-    plt.imshow(img)
-    plt.axis('off')
-    plt.title("Dart Word Use (Bigrams)")
-    plt.show()
+    # plt.figure(figsize=(14, 7))
+    # img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(dart_words.split())).apply('_'.join)))
+    # plt.imshow(img)
+    # plt.axis('off')
+    # plt.title("Dart Word Use (Bigrams)")
+    # plt.show()
     plt.figure(figsize=(14, 7))
     img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(c_words.split())).apply('_'.join)))
     plt.imshow(img)
@@ -490,12 +492,12 @@ def wordcloud_img(df):
     plt.axis('off')
     plt.title("Clojure Word Use (Bigrams)")
     plt.show()
-    plt.figure(figsize=(14, 7))
-    img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(html_words.split())).apply('_'.join)))
-    plt.imshow(img)
-    plt.axis('off')
-    plt.title("HTML Word Use (Bigrams)")
-    plt.show()
+    # plt.figure(figsize=(14, 7))
+    # img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(html_words.split())).apply('_'.join)))
+    # plt.imshow(img)
+    # plt.axis('off')
+    # plt.title("HTML Word Use (Bigrams)")
+    # plt.show()
     plt.figure(figsize=(14, 7))
     img = WordCloud(background_color='white').generate(' '.join(pd.Series(nltk.bigrams(all_words.split())).apply('_'.join)))
     plt.imshow(img)
