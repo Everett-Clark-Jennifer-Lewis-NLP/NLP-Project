@@ -34,10 +34,12 @@ ___
 ![Planning Pipeline](https://user-images.githubusercontent.com/98612085/196799270-7deb0ff8-078b-4b4b-9b9f-c96972429204.png)
 
         
-### Hypothesis: "Resources would have longer READMEs than other languages
+### Hypothesis: 
+#### - "Resources" would have longer READMEs than other languages
 
 
-### Target variable: Programming Language used
+### Target variable: 
+#### - Programming Language used
 
 ***
 ## <a name="findings"></a>Key Findings:
