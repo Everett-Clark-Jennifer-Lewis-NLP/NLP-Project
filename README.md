@@ -93,12 +93,12 @@ Using a variety of functions from functions.py, we created four additional colum
 
 ## Selecting the Best Model:
 
-| Model | Validation/Out of Sample Accuracy |
-| ---- | ----|
-| Baseline | 0.25 |
-| aaa | 0.0 |
-| aaa | 0.0 |
-| aaa | 0.0 |  
+| Model | Description| Validation/Out of Sample Accuracy |
+| ---- | ----| ----|
+| Baseline | JS as the most common prediction| 0.25 |
+| Decision Tree | ----| 0.0 |
+| Decision Tree | ----| 0.0 |
+| Random Forest | ----| 0.0 |  
 
 - {} model had the best performance
 
