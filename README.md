@@ -73,8 +73,6 @@ Using a variety of functions from functions.py, we created four additional colum
 
 ## <a name="model"></a>Modeling:
 
-## Modeling:
-
 ### Baseline
 - Baseline Results: 25% (Using Javascript as the most common occurrence
     
