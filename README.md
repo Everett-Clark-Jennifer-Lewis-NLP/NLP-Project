@@ -82,7 +82,7 @@ Using a variety of functions from functions.py, we created four additional colum
     
 ### Model Performance Out-of-Sample and selecting the Best :
 
-| Model | Description| Validation/Out of Sample Accuracy |
+| Model | Description| Train |
 | ---- | ----| ----|
 | Baseline | JS as the most common prediction| 25% |
 | Decision Tree** | using only single words| 46% |
