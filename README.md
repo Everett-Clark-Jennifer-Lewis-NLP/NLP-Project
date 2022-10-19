@@ -70,7 +70,7 @@ Using a variety of functions from functions.py, we created four additional colum
 ### Following a 80/20 Train/Test split:
 
 #### We looked at how many characters each README had and the amount of words after stopwords were removed
-![image](https://user-images.githubusercontent.com/98612085/196805071-b6326334-efef-466e-ba18-34b74bb1061c.png)
+![image](https://user-images.githubusercontent.com/98612085/196805353-67d655fc-be0b-47c9-a3e5-04c1c4ab6ab4.png)
 
 
 ***
