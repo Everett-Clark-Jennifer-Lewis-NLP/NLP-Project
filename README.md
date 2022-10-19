@@ -19,7 +19,7 @@ The Google Slides can be found [here](https://docs.google.com/presentation/d/1oc
 [[Data Dictionary](#dictionary)]
 [[Data Acquire and Prep](#wrangle)]
 [[Data Exploration](#explore)]
-[[Modeling](#model)]
+[[Modeling](#modeling)]
 [[Conclusion](#conclusion)]
 ___
 ## <a name="project_description"></a>Project Description:
@@ -43,7 +43,8 @@ ___
 
 ***
 ## <a name="findings"></a>Key Findings:
-### 1. Modeling with Bi-grams and Tri-Grams increased model efficiency
+### 1. The best model performance was the ---
+### 2. Modeling with Bi-grams and Tri-Grams increased model efficiency
 
 ***
 ## <a name="dictionary"></a>Data Dictionary  
@@ -57,40 +58,26 @@ After acquiring the repos we needed from Github's most-starred, we ran acquire.p
 <img width="575" alt="Screen Shot 2022-10-19 at 3 44 17 PM" src="https://user-images.githubusercontent.com/98612085/196800238-ca353653-5d11-467d-b883-04b3b8408dc4.png">
 
 ### Wrangle steps: 
-Using a variety of functions, we created four additional columns, resulting in:
+Using a variety of functions from functions.py, we created four additional columns, resulting in:
 
 <img width="903" alt="Screen Shot 2022-10-18 at 4 30 07 PM" src="https://user-images.githubusercontent.com/98612085/196800313-81acc5c6-56ab-4396-b137-40f97afed3b4.png">
 
 *********************
 ## <a name="explore"></a>Data Exploration:
 - Python files used for exploration:
-    - wrangle.py 
-    - acquire.py
+    - functions.py
 
-### Takeaways from exploration:
+### Takeaways from Exploration:
 
 ***
 
 ## <a name="model"></a>Modeling:
 
-### Model Preparation:
+## Modeling:
 
 ### Baseline
-- Baseline Results: 
+- Baseline Results: 25% (Using Javascript as the most common occurrence
     
-
-- Selected features to input into models:
-    - features = []
-
-***
-
-### Models and R<sup>2</sup> Values:
-- Will run the following regression models:
-
-    
-
-- Other indicators of model performance with brief definition and why it's important:
-
     
 ### Model 1: ---
 - Model 1 results:
@@ -106,12 +93,12 @@ Using a variety of functions, we created four additional columns, resulting in:
 
 ## Selecting the Best Model:
 
-| Model | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
+| Model | Validation/Out of Sample Accuracy |
 | ---- | ----| ---- |
-| Baseline | 0.27 | 0 |
-| aaa | 0.0 | 0 |  
-| aaa | 0.0 | 0 |  
-| aaa | 0.0 | 0 |  
+| Baseline | 0.25 |
+| aaa | 0.0 |
+| aaa | 0.0 |
+| aaa | 0.0 |  
 
 - {} model had the best performance
 
@@ -124,7 +111,8 @@ Using a variety of functions, we created four additional columns, resulting in:
 
 ## <a name="conclusion"></a>Conclusion:
 
-## Additional Improvements:
-### 1.
-### 2.
+## Recommendations:
+### 1. Reduce language variation within the corpus to improve accuracy
+### 2. Narrow down words more specifically within the corpus
+### 3. Further exploration of word combinations and their relationship to a programming language
 [[Back to top](#top)]
