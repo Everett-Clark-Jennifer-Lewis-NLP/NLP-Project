@@ -43,7 +43,7 @@ ___
 
 ***
 ## <a name="findings"></a>Key Findings:
-### 1. The best model performance was the ---
+### 1. The best model was the Decision Tree on singular words and it performed at 60%
 ### 2. Modeling with Bi-grams and Tri-Grams increased model efficiency
 
 ***
@@ -100,12 +100,9 @@ Using a variety of functions from functions.py, we created four additional colum
 | Decision Tree | using single words, bi- and tri- grams| 62% |
 | Random Forest | using bi- and tri- grams| 53% |  
 
-- The first model (Decision Tree**) had the best performance on test at 60%
-
-
 ## Testing the Model
 
-- Model Testing Results: 
+- The first model (Decision Tree**) had the best performance on test at 60% 
 
 ***
 
