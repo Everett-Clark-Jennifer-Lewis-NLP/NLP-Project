@@ -97,7 +97,6 @@ Using a variety of functions from functions.py, we created four additional colum
 
 ## <a name="conclusion/recommendations"></a>Conclusion/Recommendations:
 
-## Recommendations:
 ### 1. Reduce language variation within the corpus to improve accuracy
 ### 2. Narrow down words more specifically within the corpus
 ### 3. Further exploration of word combinations and their relationship to a programming language
