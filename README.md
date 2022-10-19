@@ -52,11 +52,13 @@ ___
 ***
 
 ## <a name="wrangle"></a>Acquisition and Preparation
-
+After acquiring the repos we needed from Github's most-starred, we ran acquire.py and generated json data, which was then converted into a Dataframe
 <img width="575" alt="Screen Shot 2022-10-19 at 3 44 17 PM" src="https://user-images.githubusercontent.com/98612085/196800238-ca353653-5d11-467d-b883-04b3b8408dc4.png">
 
 
 ### Wrangle steps: 
+
+<img width="903" alt="Screen Shot 2022-10-18 at 4 30 07 PM" src="https://user-images.githubusercontent.com/98612085/196800313-81acc5c6-56ab-4396-b137-40f97afed3b4.png">
 
 
 *********************
