@@ -24,6 +24,9 @@ The Google Slides can be found [here](https://docs.google.com/presentation/d/1oc
 ___
 ## <a name="project_description"></a>Project Description:
 
+### We acquired 100 READMEs from [Github's Most Starred Repos](https://github.com/search?l=%3Fspoken_language_code%3Den&p=11&q=stars%3A%3E10000&ref=advsearch&type=Repositories) (10/17/22), encoded and decoded the text, and created n-grams to predict the programming language used within the repo.
+
+## Baseline prediction, predicting Javascript, was 25%. Our best model predicted the programming language at 60%.
 
 ***
 ## <a name="planning"></a>Project Planning: 
@@ -69,7 +72,6 @@ ___
 ***
 
 ## <a name="model"></a>Modeling:
-[[Back to top](#top)]
 
 ### Model Preparation:
 
