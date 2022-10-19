@@ -35,11 +35,11 @@ ___
 
         
 ### Hypothesis: 
-#### - "Resources" would have longer READMEs than other languages
+#### "Resources" would have longer READMEs than other languages
 
 
 ### Target variable: 
-#### - Programming Language used
+### Programming Language used
 
 ***
 ## <a name="findings"></a>Key Findings:
