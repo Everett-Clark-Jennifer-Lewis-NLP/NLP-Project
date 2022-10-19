@@ -67,7 +67,11 @@ Using a variety of functions from functions.py, we created four additional colum
 - Python files used for exploration:
     - functions.py
 
-### Takeaways from Exploration:
+### Following a 80/20 Train/Test split:
+
+#### We looked at how many characters each README had and the amount of words after stopwords were removed
+![image](https://user-images.githubusercontent.com/98612085/196805071-b6326334-efef-466e-ba18-34b74bb1061c.png)
+
 
 ***
 
