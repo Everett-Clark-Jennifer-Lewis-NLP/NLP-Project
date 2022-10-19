@@ -95,12 +95,12 @@ Using a variety of functions from functions.py, we created four additional colum
 
 | Model | Description| Validation/Out of Sample Accuracy |
 | ---- | ----| ----|
-| Baseline | JS as the most common prediction| 0.25 |
-| Decision Tree | using only single words| 0.0 |
-| Decision Tree | using single words, bi- and tri- grams| 0.0 |
-| Random Forest | using bi- and tri- grams| 0.0 |  
+| Baseline | JS as the most common prediction| 25% |
+| Decision Tree** | using only single words| 46% |
+| Decision Tree | using single words, bi- and tri- grams| 62% |
+| Random Forest | using bi- and tri- grams| 53% |  
 
-- {} model had the best performance
+- The first model (Decision Tree**) had the best performance on test at 60%
 
 
 ## Testing the Model
