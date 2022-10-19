@@ -94,7 +94,7 @@ Using a variety of functions from functions.py, we created four additional colum
 ## Selecting the Best Model:
 
 | Model | Validation/Out of Sample Accuracy |
-| ---- | ----| ---- |
+| ---- | ----|
 | Baseline | 0.25 |
 | aaa | 0.0 |
 | aaa | 0.0 |
@@ -105,7 +105,7 @@ Using a variety of functions from functions.py, we created four additional colum
 
 ## Testing the Model
 
-- Model Testing Results
+- Model Testing Results: 
 
 ***
 
