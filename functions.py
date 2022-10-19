@@ -21,6 +21,16 @@ from sklearn.metrics import classification_report
 import warnings
 warnings.filterwarnings("ignore")
 
+def clean(text: str) -> list:
+    'A simple function to cleanup text data'
+    wnl = nltk.stem.WordNetLemmatizer()
+    stopwords = set(nltk.corpus.stopwords.words('english'))
+    text = (text.encode('ascii', 'ignore')
+             .decode('utf-8', 'ignore')
+             .lower())
+    words = re.sub(r'[^\w\s]', '', text)#😉 # tokenization
+    words = re.sub(r'\w{15,}','',words).split()
+    return [wnl.lemmatize(word) for word in words if word not in stopwords]
 
 def count(df):
     '''Plots a barplot of the distributions of character lengths and word counts within the repository readmes'''
@@ -33,6 +43,44 @@ def count(df):
     plt.title('Distribution of Character Length and word Count per Repository')
     plt.legend(['Word Count', 'Length'])
     plt.show()
+
+def readme_length(df):
+    '''Creates a column with the length (by # of characters) of the readme_contents column'''
+    l = []
+    for val in df.readme_contents.index:
+        l.append(
+            {
+                'length': len(df.iloc[val].readme_contents),
+            }
+                )
+    l = pd.DataFrame(l)
+    df = df.join(l, how='right')
+    return df
+
+def clean_readme(df):
+    '''Creates a new column that encodes, decodes, lemmatizes and removes 
+        words greater than 15 characters and puts them into a list'''
+    df['clean'] = df.readme_contents.apply(clean)
+    return df
+
+def word_count(df):
+    '''Creates a column with number of words in the clean column'''
+    w = []
+    for val in df.readme_contents.index:
+        w.append(
+            {
+                'word_count': len(df.clean.iloc[val]),
+            }
+                )
+    w = pd.DataFrame(w)
+    df = df.join(w, how='right')
+    return df
+
+def combined_words(df):
+    '''Joins the list of words in the clean column to one string'''
+    df['words'] = df.clean.apply(' '.join)
+    return df
+
 
 
 def word_split(df):
