@@ -35,11 +35,11 @@ ___
 
         
 ### Hypothesis: 
-### "Resources" would have longer READMEs than other languages
+- "Resources" would have longer READMEs than other languages
 
 
 ### Target variable: 
-### Programming Language used
+- Programming Language used
 
 ***
 ## <a name="findings"></a>Key Findings:
@@ -78,20 +78,7 @@ Using a variety of functions from functions.py, we created four additional colum
 ### Baseline
 - Baseline Results: 25% (Using Javascript as the most common occurrence
     
-    
-### Model 1: ---
-- Model 1 results:
-
-
-### Model 2 : ---
-- Model 2 results:
-
-
-### Model 3 : ---
-- Model 3 results:
-
-
-## Selecting the Best Model:
+### Model Performance Out-of-Sample and selecting the Best :
 
 | Model | Description| Validation/Out of Sample Accuracy |
 | ---- | ----| ----|
@@ -100,7 +87,7 @@ Using a variety of functions from functions.py, we created four additional colum
 | Decision Tree | using single words, bi- and tri- grams| 62% |
 | Random Forest | using bi- and tri- grams| 53% |  
 
-## Testing the Model
+### Testing the Model
 
 - The first model (Decision Tree**) had the best performance on test at 60% 
 
