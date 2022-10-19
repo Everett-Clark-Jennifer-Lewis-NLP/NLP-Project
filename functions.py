@@ -588,9 +588,18 @@ def split(df):
     X_train, X_test, y_train, y_test = train_test_split(X , y, test_size=0.2, random_state= 536)
     return X_train, X_test, y_train, y_test
 
+def modeling_tree(df):
+    X_train, X_test, y_train, y_test = split(df)
+    cv = CountVectorizer()
+    X_bow = cv.fit_transform(X_train)
+    tree = DecisionTreeClassifier(max_depth=3)
+    tree.fit(X_bow, y_train)
+    
+    print(f"Accuracy of Decision Tree (Using Basic words and max_depth 3) on Train: {tree.score(X_bow, y_train)}")
+    print(f'''Feature Importance:
+{pd.Series(dict(zip(cv.get_feature_names_out(), tree.feature_importances_))).sort_values().tail()}''')
 
-
-def modeling_bi_tri(df):
+def modeling_bi_tri_tree(df):
     '''
     Takes in a DataFrame.
     Uses split() to create X and y Trains and Tests.
@@ -603,6 +612,8 @@ def modeling_bi_tri(df):
     tree = DecisionTreeClassifier(max_depth=5)
     tree.fit(X_bow, y_train)
     print(f" Accuracy of Decision Tree (Using 1 - 3 ngrams and max_depth 5) on Train: {tree.score(X_bow, y_train)}")
+    print(f'''Feature Importance:
+{pd.Series(dict(zip(cv.get_feature_names_out(), tree.feature_importances_))).sort_values().tail()}''')
 
 
 def modeling_rf(df):
@@ -640,6 +651,10 @@ def tree_test(df):
     '''
     X_train, X_test, y_train, y_test = split(df)
     cv = CountVectorizer(ngram_range=(1,3), analyzer='word')
-    X_test_bow = cv.transform(X_test)
+    X_bow = cv.fit_transform(X_train)
     tree = DecisionTreeClassifier(max_depth=5)
+    tree.fit(X_bow, y_train)
+    X_test_bow = cv.transform(X_test)
     print(f"Accuracy of Decision Tree on Test: {tree.score(X_test_bow, y_test)}")
+    print(f'''Feature Importance:
+{pd.Series(dict(zip(cv.get_feature_names_out(), tree.feature_importances_))).sort_values().tail()}''')
