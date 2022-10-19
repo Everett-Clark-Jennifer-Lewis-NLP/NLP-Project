@@ -35,7 +35,7 @@ ___
 
         
 ### Hypothesis: 
-#### "Resources" would have longer READMEs than other languages
+### "Resources" would have longer READMEs than other languages
 
 
 ### Target variable: 
@@ -43,7 +43,7 @@ ___
 
 ***
 ## <a name="findings"></a>Key Findings:
-
+### 1. Modeling with Bi-grams and Tri-Grams increased model efficiency
 
 ***
 ## <a name="dictionary"></a>Data Dictionary  
@@ -53,6 +53,7 @@ ___
 
 ## <a name="wrangle"></a>Acquisition and Preparation
 
+<img width="575" alt="Screen Shot 2022-10-19 at 3 44 17 PM" src="https://user-images.githubusercontent.com/98612085/196800238-ca353653-5d11-467d-b883-04b3b8408dc4.png">
 
 
 ### Wrangle steps: 
