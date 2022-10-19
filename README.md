@@ -20,7 +20,7 @@ The Google Slides can be found [here](https://docs.google.com/presentation/d/1oc
 [[Data Acquire and Prep](#wrangle)]
 [[Data Exploration](#explore)]
 [[Modeling](#modeling)]
-[[Conclusion](#conclusion)]
+[[Conclusion/Recommendations](#conclusion/recommendations)]
 ___
 ## <a name="project_description"></a>Project Description:
 
@@ -95,7 +95,7 @@ Using a variety of functions from functions.py, we created four additional colum
 
 ***
 
-## <a name="conclusion"></a>Conclusion:
+## <a name="conclusion/recommendations"></a>Conclusion/Recommendations:
 
 ## Recommendations:
 ### 1. Reduce language variation within the corpus to improve accuracy
